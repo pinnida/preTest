@@ -9,6 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { QuestionModule } from './question/question.module';
 
+import {TableModule} from 'primeng/table';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -20,7 +22,8 @@ import { QuestionModule } from './question/question.module';
     ReactiveFormsModule,
     FormsModule,
     AppRoutingModule,
-    QuestionModule
+    QuestionModule,
+    TableModule
   ],
   providers: [DecimalPipe],
   bootstrap: [AppComponent]

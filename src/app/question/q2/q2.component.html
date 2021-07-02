@@ -1,1 +1,60 @@
-<p>q2 works!</p>
+<!-- <p>q2 works!</p> -->
+
+<div class="container" *ngIf="categoryList">
+  <p-table
+    #dt
+    [columns]="cols"
+    [value]="categoryList"
+    [paginator]="true"
+    [rows]="10"
+    [showCurrentPageReport]="true"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [rowsPerPageOptions]="[10, 25, 50]"
+    [globalFilterFields]="['category']"
+    [style]="{ width: '100%', 'font-size': '12px' }"
+  >
+    <ng-template pTemplate="caption">
+      <div class="p-grid p-fluid">
+        <div class="p-col-12">
+          <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input
+              pInputText
+              type="text"
+              (input)="dt.filterGlobal($event.target.value, 'contains')"
+              placeholder="Search..."
+            />
+          </span>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th style="width: 5%; text-align: center">ลำดับ</th>
+        <th
+          *ngFor="let col of columns"
+          [ngStyle]="{ width: col.width, 'text-align': 'center' }"
+        >
+          {{ col.header }}
+        </th>
+        <th style="width: 15%; text-align: center"></th>
+      </tr>
+    </ng-template>
+    <ng-template
+      pTemplate="body"
+      let-rowData
+      let-columns="columns"
+      let-rowIndex="rowIndex"
+    >
+      <tr>
+        <td style="width: 5%; text-align: center">{{ rowIndex + 1 }}</td>
+        <td
+          *ngFor="let col of columns"
+          [ngStyle]="{ width: col.width, 'text-align': col.calign }"
+        >
+          {{ rowData[col.field] }}
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
