@@ -2,8 +2,16 @@
 // Import Bootstrap
 @import "~bootstrap/scss/bootstrap.scss";
 
-body{
-  overflow-x: hidden !important;
-  overflow-y: hidden !important;
-  /* font-family: 'Kanit' !important; */
+// body{
+//   overflow-x: hidden !important;
+//   /* font-family: 'Kanit' !important; */
+// }
+
+
+/* Responsive Styles */
+@media only screen and (max-width: 600px) {
+  /* styles for browsers larger than 960px; */
+  body {
+    overflow-x: scroll !important;
+    overflow-y: auto !important;;  }
 }
