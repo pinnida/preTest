@@ -1,0 +1,24 @@
+.fcol {
+  max-width: 200px;
+  min-width: 100px;
+  height: 400px
+}
+
+.mcol {
+  min-width: 100px;
+  height: 400px
+}
+
+.lcol {
+  max-width: 300px;
+  min-width: 100px;
+  height: 400px
+}
+
+/* Responsive Styles */
+@media only screen and (min-width: 600px) {
+  /* styles for browsers larger than 960px; */
+  .body{
+    overflow-x: scroll !important;;
+  }
+}

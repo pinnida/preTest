@@ -1,0 +1,18 @@
+<p>Check Prime Number or Fibonacci Number</p>
+  <div class="row my-col">
+    <div class="col border fcol">
+      Column1
+      <input type="text" class="form-control" placeholder="" [(ngModel)]="myinp.value" (change)="roundToInteger(myinp.value)" (blur)="checkUpdate(myinp)">
+    </div>
+    <div class="col border mcol">
+      Column2
+      <select class="form-select" aria-label="Default select example" [(ngModel)]="myinp.key" (change)="checkUpdate(myinp)">
+        <option value="isPrime">isPrime</option>
+        <option value="isFibonacci">isFibonacci</option>
+      </select>
+    </div>
+    <div class="col border lcol">
+      Column3
+      <input type="text" class="form-control" placeholder="" [(ngModel)]="myinp.result" [disabled]=true>
+    </div>
+  </div>
